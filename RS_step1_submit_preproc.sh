@@ -2,29 +2,28 @@
 
 
 # written by Nathan Muncy on 11/7/17
-
+# Butchered by Benjamin Carter 2019-04-25
 
 ### Wrapper script for RestingState_step1_sbatch_preproc.sh
 
 
-workDir=~/compute/MNI_RDoC/MRI_processed
-scriptDir=${workDir}/Scripts
+WORK_DIR=~/compute/skilledReadingStudy
+ANALYSIS=~/analyses/restingSkilledReading
 
-# Create output dir for trouble shooting
-slurmDir=${workDir}/Slurm_out
+# logfiles directory and output information
 time=`date '+%Y_%m_%d-%H_%M_%S'`
-outDir=${slurmDir}/resting_${time}
-mkdir -p $outDir
+LOG=~/logfiles/REST_${time}
+mkdir -p $LOG
 
 
-cd $workDir
+cd $WORK_DIR
 
 for i in P*; do
 
     sbatch \
-    -o ${outDir}/output_resting_${i}.txt \
-    -e ${outDir}/error_resting_${i}.txt \
-    ${scriptDir}/RestingState_step1_sbatch_preproc.sh $workDir $i
+    -o ${LOG}/output_resting1_${i}.txt \
+    -e ${LOG}/error_resting1_${i}.txt \
+    ${ANALYSIS}/sbatch_step1.sh ${WORK_DIR} ${i}
 
     sleep 1
 done
