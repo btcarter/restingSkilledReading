@@ -1,10 +1,14 @@
 #!/bin/bash
 
-#SBATCH --time=15:00:00   # walltime
+#SBATCH --time=20:00:00   # walltime
 #SBATCH --ntasks=6   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --mem-per-cpu=8gb   # memory per CPU core
 #SBATCH -J "RS1"   # job name
+#SBATCH --mail-user=ben88@byu.edu  # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
 
 # Compatibility variables for PBS. Delete if not needed.
 export PBS_NODEFILE=`/fslapps/fslutils/generate_pbs_nodefile`
@@ -41,7 +45,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_ON_NODE
 START_DIR=$(pwd)										# starting directory
 STUDY=~/compute/skilledReadingStudy						# study directory
 TEMPLATE_DIR=${STUDY}/template							# location of study template
-DICOM_DIR=${STUDY}/dicomdir/${1}						# location of dicoms
+DICOM_DIR=${STUDY}/dicomdir/${1}						# location of dicoms was called rawDir by Nate
 PARTICIPANT_REST=${STUDY}/resting/${1}					# location of derived participant NIFTI files
 
 
@@ -104,6 +108,7 @@ if [ ! -f ${workDir}/Resting+orig.HEAD ] || [ ! -f ${workDir}/struct+orig.HEAD ]
 fi
 
 
+# Create template priors using antsCT
 # CONVERT DICOMS to NIFTIs
 
 ### --- Volreg Setup --- ###
