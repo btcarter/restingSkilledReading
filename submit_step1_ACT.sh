@@ -19,9 +19,9 @@ cd $WORK_DIR
 for i in P*; do
 
     sbatch \
-    -o ${LOG}/output_ACT_${i}.txt \
-    -e ${LOG}/error_ACT_${i}.txt \
-    ${ANALYSIS}/sbatch_step1_ACT.sh ${WORK_DIR}
+    -o ${LOG}/output_ACT.txt \
+    -e ${LOG}/error_ACT.txt \
+    ${ANALYSIS}/sbatch_step1_ACT.sh
 
     sleep 1
 done
