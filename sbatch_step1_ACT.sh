@@ -30,7 +30,7 @@ PATH=${ANTSPATH}:${PATH}
 #######################
 
 DATA_DIR=~/compute/skilledReadingStudy/template					# location of the study structural template
-OASIS-30_DIR=~/templates/adult/OASIS-30_Atropos_template		# location of the reference template priors
+OASIS_30_DIR=~/templates/adult/OASIS-30_Atropos_template		# location of the reference template priors
 
 ####################
 # --- COMMANDS --- #
@@ -49,8 +49,9 @@ OASIS-30_DIR=~/templates/adult/OASIS-30_Atropos_template		# location of the refe
 # ------------------
 
 # check for priors
-if [ ! -d ${OASIS-30_DIR} ]; then
+if [ ! -d ${OASIS_30_DIR} ]; then
 	echo I have no priors to run with!
+	exit 1
 fi
 
 # check for output directory
@@ -62,11 +63,11 @@ fi
 ~/apps/ants/bin/antsCorticalThickness.sh \
 -d 3 \
 -a ${DATA_DIR}/dyce_mni_template.nii.gz \
--e ${OASIS-30_DIR}/T_template.nii.gz \
--t ${OASIS-30_DIR}/T_template_BrainCerebellum.nii.gz \
--m ${OASIS-30_DIR}/T_template_BrainCerebellumProbabilityMask.nii.gz \
--f ${OASIS-30_DIR}/T_template_BrainCerebellumExtractionMask.nii.gz \
--p ${OASIS-30_DIR}/Priors2/priors%d.nii.gz \
+-e ${OASIS_30_DIR}/T_template0.nii.gz \
+-t ${OASIS_30_DIR}/T_template0_BrainCerebellum.nii.gz \
+-m ${OASIS_30_DIR}/T_template0_BrainCerebellumProbabilityMask.nii.gz \
+-f ${OASIS_30_DIR}/T_template0_BrainCerebellumExtractionMask.nii.gz \
+-p ${OASIS_30_DIR}/Priors2/priors%d.nii.gz \
 -q 1 \
 -o ${DATA_DIR}/antsCT/
 
