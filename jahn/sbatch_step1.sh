@@ -28,6 +28,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_ON_NODE
 # Operations: what does this script do? (aka outline of the steps and a minor explanation of why)
 # 1. Ensures proper file structure is present and if not creates it.
 # 2. Converts resting DICOMs NIFTIs
+# 3. Runs afni_proc.py to generate a resting state processing command.
 # 
 # Requires: what does this script require to run?
 # 1. A resting state EPI
@@ -46,6 +47,9 @@ DICOMS=${STUDY_DIR}/dicomdir/${1}/EPI_RESTING*
 REST_DIR=${STUDY_DIR}/resting
 PARTICIPANT=${REST_DIR}/${1}
 D2N=~/apps/dcm2niix/bin/dcm2niix
+PART_REST=${PARTICIPANT}/${1}_T2wRest.nii.gz
+PART_STRUC=${STUDY_DIR}/structural/${1}/${1}_T1w.nii
+BASE=${STUDY_DIR}/template/dyce_mni_template.nii.gz			# structural reference dataset, originally MNI152_T1_2009c+tlrc
 
 ###############
 #---COMMANDS--#
@@ -69,7 +73,7 @@ if [ ! -f ${DICOMS} ]; then
 fi
 
 # 2. Check for NIFTIs or make them from the DICOMs
-if [ ! -f ${PARTICIPANT}/*.nii* ]; then
+if [ ! -f ${PART_REST} ]; then
 	mkdir -p ${PARTICIPANT}
 	cd ${PARTICIPANT}
 	${D2N} \
@@ -77,6 +81,28 @@ if [ ! -f ${PARTICIPANT}/*.nii* ]; then
 	-x y \
 	-o ${PARTICIPANT} \
 	-i ${DICOMS}
-	mv ${PARTICIPANT}/*Crop*.nii ${PARTICIPANT}/${1}_EPI_rest.nii
+	mv ${PARTICIPANT}/*Crop*.nii ${PART_REST}
 	cd ${START}
 fi
+
+# 3. Create resting state processing command in resting state directory
+cd ${PARTICIPANT}
+afni_proc.py -subj_id ${1}          		                      \
+       -dsets ${PART_REST}     		                              \
+       -copy_anat ${PART_STRUC}                                   \
+       -blocks despike tshift align tlrc volreg blur mask         \
+               scale regress                                      \
+       -tcat_remove_first_trs 3                                   \
+       -tlrc_base ${BASE}			                              \
+       -tlrc_NL_warp                                              \
+       -volreg_align_e2a                                          \
+       -volreg_tlrc_warp                                          \
+       -mask_epi_anat yes                                         \
+       -regress_censor_motion 0.2                                 \
+       -regress_censor_outliers 0.05                              \
+       -regress_bandpass 0.01 0.1                                 \
+       -regress_apply_mot_types demean deriv                      \
+       -regress_est_blur_epits                                    \
+       -regress_est_blur_errts
+       
+#source what is the script called?
