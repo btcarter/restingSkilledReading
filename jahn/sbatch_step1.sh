@@ -43,7 +43,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_ON_NODE
 
 START=$(pwd)
 STUDY_DIR=~/compute/skilledReadingStudy
-DICOMS=${STUDY_DIR}/dicomdir/${1}/EPI_RESTING*
+DICOMS=${STUDY_DIR}/dicomdir/${1}/EPI_RESTING_*
 REST_DIR=${STUDY_DIR}/resting
 PARTICIPANT=${REST_DIR}/${1}
 D2N=~/apps/dcm2niix/bin/dcm2niix
