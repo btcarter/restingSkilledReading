@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#SBATCH --time=20:00:00   # walltime
-#SBATCH --ntasks=6   # number of processor cores (i.e. tasks)
+#SBATCH --time=00:30:00   # walltime
+#SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --mem-per-cpu=8gb   # memory per CPU core
-#SBATCH -J "RS1"   # job name
+#SBATCH -J "afni_proc.py"   # job name
 #SBATCH --mail-user=ben88@byu.edu  # email address
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
