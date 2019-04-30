@@ -67,11 +67,6 @@ if [ ! -d ${REST_DIR} ]; then
 	exit 1
 fi
 
-if [ ! -d ${DICOMS} ]; then
-	echo There are no dicoms. There is no food to sustain me. I must die!
-	exit 1
-fi
-
 # 2. Check for NIFTIs or make them from the DICOMs
 if [ ! -f ${PART_REST} ]; then
 	mkdir -p ${PARTICIPANT}
