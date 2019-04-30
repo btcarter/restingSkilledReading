@@ -63,7 +63,7 @@ if [ ! -d ${STUDY_DIR} ]; then
 fi
 
 if [ ! -d ${REST_DIR} ]; then
-	echo No study resting directory, I must die!
+	mkdir ${REST_DIR}
 	exit 1
 fi
 
