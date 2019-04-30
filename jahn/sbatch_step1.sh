@@ -82,8 +82,14 @@ if [ ! -f ${PART_REST} ]; then
 	-o ${PARTICIPANT} \
 	-i ${DICOMS}
 	mv ${PARTICIPANT}/*Crop*.nii ${PART_REST}
-	cd ${START}
 fi
+
+if [ ! -f ${PART_REST} ]; then
+	echo I failed and must die!
+	exit 1
+fi
+
+echo Pushed pushed NIFTIs.
 
 # 3. Create resting state processing command in resting state directory
 cd ${PARTICIPANT}
