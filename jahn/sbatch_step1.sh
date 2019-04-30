@@ -76,7 +76,7 @@ if [ ! -f ${PART_REST} ]; then
 	-x y \
 	-o ${PARTICIPANT} \
 	-i ${DICOMS}
-	mv ${PARTICIPANT}/*Crop*.nii ${PART_REST}
+	mv ${PARTICIPANT}/dti.nii ${PART_REST}
 fi
 
 if [ ! -f ${PART_REST} ]; then
