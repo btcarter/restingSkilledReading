@@ -9,7 +9,7 @@
 START=$(pwd)
 STUDY_DIR=~/compute/skilledReadingStudy
 PART_LIST=$(ls ${STUDY_DIR}/dicomdir)
-ANALYSIS=~/analyses/resting/skilledReading/jahn
+ANALYSIS=~/analyses/restingSkilledReading/jahn
 LOG=~/logfiles
 
 ###############
