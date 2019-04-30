@@ -10,11 +10,16 @@ START=$(pwd)
 STUDY_DIR=~/compute/skilledReadingStudy
 PART_LIST=$(ls ${STUDY_DIR}/dicomdir)
 ANALYSIS=~/analyses/restingSkilledReading/jahn
-LOG=~/logfiles
+TIME=`date '+%Y_%m_%d-%H_%M_%S'`
+LOG=~/logfiles/REST_${TIME}
 
 ###############
 #---COMMANDS--#
 ###############
+
+if [ ! -d ${LOG} ]; then
+	mkdir -p ${LOG}
+fi
 
 for i in ${PART_LIST}; do
 	sbatch \
