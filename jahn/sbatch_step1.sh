@@ -79,13 +79,6 @@ if [ ! -f ${PART_REST} ]; then
 	mv ${PARTICIPANT}/dti.nii ${PART_REST}
 fi
 
-if [ ! -f ${PART_REST} ]; then
-	echo I failed and must die!
-	exit 1
-fi
-
-echo Pushed pushed NIFTIs.
-
 # 3. Create resting state processing command in resting state directory
 cd ${PARTICIPANT}
 afni_proc.py -subj_id ${1}          		                      \
