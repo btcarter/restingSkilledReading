@@ -44,5 +44,5 @@ PARTICIPANT=${REST_DIR}/${1}
 ###############
 #---COMMANDS--#
 ###############
-
+cd ${PARTICIPANT}
 tcsh -xef proc.${1} 2>&1 | tee output.proc.${1}
