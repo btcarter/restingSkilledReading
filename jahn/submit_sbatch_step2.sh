@@ -26,4 +26,5 @@ for i in ${PART_LIST}; do
 		-o ${LOG}/output_resting2_${i}.txt \
 		-e ${LOG}/error_resting2_${i}.txt \
 		${ANALYSIS}/sbatch_step2.sh ${i}
+	sleep 1
 done
