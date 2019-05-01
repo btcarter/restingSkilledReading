@@ -94,7 +94,7 @@ afni_proc.py -subj_id ${1}          		                      \
        -blocks despike tshift align tlrc volreg blur mask         \
                scale regress                                      \
        -tcat_remove_first_trs 3                                   \
-       -tlrc_base ${BASE}			                              \
+       -tlrc_base MNI152_T1_2009c+tlrc                            \
        -tlrc_NL_warp                                              \
        -volreg_align_e2a                                          \
        -volreg_tlrc_warp                                          \
