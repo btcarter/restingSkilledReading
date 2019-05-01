@@ -45,4 +45,4 @@ PARTICIPANT=${REST_DIR}/${1}
 #---COMMANDS--#
 ###############
 
-source ${PARTICIPANT}/proc.${1}
+tcsh -xef proc.${1} 2>&1 | tee output.proc.${1}
