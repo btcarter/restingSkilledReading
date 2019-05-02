@@ -57,4 +57,4 @@ OUT=VWFA
 3dfim+ -input ${PART_RESU}/errts.${1}.tproject+tlrc -polort 0 -ideal_file ${PART_RESU}/timeCourse.txt -out Correlation -bucket ${PART_RESU}/${OUT}_Corr
 
 # 3. convert to Z maps
-3dcalc -a ${PART_RESU}/${OUT}_Corr+tlrc -expr 'log((1+a)/(1-a))/2' -prefix ${PART_RESU}/Corr_subj${1}_Z
+3dcalc -a ${PART_RESU}/${OUT}_Corr+tlrc -expr 'log((1+a)/(1-a))/2' -prefix ${PART_RESU}/${1}_ZMap
