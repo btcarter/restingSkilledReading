@@ -53,8 +53,23 @@ OUT=VWFA
 # 1. extract time course
 3dmaskave -quiet -mask ${MASK} ${PART_RESU}/errts.${1}.tproject+tlrc > ${PART_RESU}/timeCourse.txt
 
+if [ ! -f ${PART_RESU}/timeCourse.txt ]; then
+	echo I failed to extract the time course!
+	exit 1
+fi
+
 # 2. create correlation maps
 3dfim+ -input ${PART_RESU}/errts.${1}.tproject+tlrc -polort 0 -ideal_file ${PART_RESU}/timeCourse.txt -out Correlation -bucket ${PART_RESU}/${OUT}_Corr
 
+if [ ! -f ${PART_RESU}/${OUT}_Corr ]; then
+	echo I failed to create correlation maps!
+	exit 1
+fi
+
 # 3. convert to Z maps
 3dcalc -a ${PART_RESU}/${OUT}_Corr+tlrc -expr 'log((1+a)/(1-a))/2' -prefix ${PART_RESU}/${1}_ZMap
+
+if [ ! -f ${PART_RESU}/${1}_ZMap ]; then
+	echo I failed to create Z maps!
+	exit 1
+fi

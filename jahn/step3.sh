@@ -29,4 +29,4 @@ cd ${REFER}
 echo "-42, -44, -14" > tmp.txt
 
 # make a spherical mask
-3dUndump -prefix VWFA -master ${REFER}/errts.Luke_Reading_S11.tproject+tlrc. -srad 10 -xyz tmp.txt
+3dUndump -prefix VWFA -master ${REFER}/errts.Luke_Reading_S11.tproject+tlrc. -srad 5 -xyz tmp.txt

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --time=10:00:00   # walltime
+#SBATCH --time=01:00:00   # walltime
 #SBATCH --ntasks=4   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --mem-per-cpu=4gb   # memory per CPU core
@@ -49,37 +49,37 @@ OUT=VWFA
 -Clustsim 4 \
 -prefix ${REST_DIR}/${OUT}_resting \
 -setA ${OUT} \
-Luke_Reading_S1 ${REST_DIR}/Luke_Reading_S1/Luke_Reading_S1.results/Corr_subjLuke_Reading_S1_Z+tlrc'[0]' \
-Luke_Reading_S2 ${REST_DIR}/Luke_Reading_S2/Luke_Reading_S2.results/Corr_subjLuke_Reading_S2_Z+tlrc'[0]' \
-Luke_Reading_S4 ${REST_DIR}/Luke_Reading_S4/Luke_Reading_S4.results/Corr_subjLuke_Reading_S4_Z+tlrc'[0]' \
-Luke_Reading_S5 ${REST_DIR}/Luke_Reading_S5/Luke_Reading_S5.results/Corr_subjLuke_Reading_S5_Z+tlrc'[0]' \
-Luke_Reading_S7 ${REST_DIR}/Luke_Reading_S7/Luke_Reading_S7.results/Corr_subjLuke_Reading_S7_Z+tlrc'[0]' \
-Luke_Reading_S8 ${REST_DIR}/Luke_Reading_S8/Luke_Reading_S8.results/Corr_subjLuke_Reading_S8_Z+tlrc'[0]' \
-Luke_Reading_S9 ${REST_DIR}/Luke_Reading_S9/Luke_Reading_S9.results/Corr_subjLuke_Reading_S9_Z+tlrc'[0]' \
-Luke_Reading_S11 ${REST_DIR}/Luke_Reading_S11/Luke_Reading_S11.results/Corr_subjLuke_Reading_S11_Z+tlrc'[0]' \
-Luke_Reading_S12 ${REST_DIR}/Luke_Reading_S12/Luke_Reading_S12.results/Corr_subjLuke_Reading_S12_Z+tlrc'[0]' \
-Luke_Reading_S14 ${REST_DIR}/Luke_Reading_S14/Luke_Reading_S14.results/Corr_subjLuke_Reading_S14_Z+tlrc'[0]' \
-Luke_Reading_S16 ${REST_DIR}/Luke_Reading_S16/Luke_Reading_S16.results/Corr_subjLuke_Reading_S16_Z+tlrc'[0]' \
-Luke_Reading_S17 ${REST_DIR}/Luke_Reading_S17/Luke_Reading_S17.results/Corr_subjLuke_Reading_S17_Z+tlrc'[0]' \
-Luke_Reading_S18 ${REST_DIR}/Luke_Reading_S18/Luke_Reading_S18.results/Corr_subjLuke_Reading_S18_Z+tlrc'[0]' \
-Luke_Reading_S19 ${REST_DIR}/Luke_Reading_S19/Luke_Reading_S19.results/Corr_subjLuke_Reading_S19_Z+tlrc'[0]' \
-Luke_Reading_S20 ${REST_DIR}/Luke_Reading_S20/Luke_Reading_S20.results/Corr_subjLuke_Reading_S20_Z+tlrc'[0]' \
-Luke_Reading_S22 ${REST_DIR}/Luke_Reading_S22/Luke_Reading_S22.results/Corr_subjLuke_Reading_S22_Z+tlrc'[0]' \
-Luke_Reading_S23 ${REST_DIR}/Luke_Reading_S23/Luke_Reading_S23.results/Corr_subjLuke_Reading_S23_Z+tlrc'[0]' \
-Luke_Reading_S25 ${REST_DIR}/Luke_Reading_S25/Luke_Reading_S25.results/Corr_subjLuke_Reading_S25_Z+tlrc'[0]' \
-Luke_Reading_S26 ${REST_DIR}/Luke_Reading_S26/Luke_Reading_S26.results/Corr_subjLuke_Reading_S26_Z+tlrc'[0]' \
-Luke_Reading_S28 ${REST_DIR}/Luke_Reading_S28/Luke_Reading_S28.results/Corr_subjLuke_Reading_S28_Z+tlrc'[0]' \
-Luke_Reading_S29 ${REST_DIR}/Luke_Reading_S29/Luke_Reading_S29.results/Corr_subjLuke_Reading_S29_Z+tlrc'[0]' \
-Luke_Reading_S30 ${REST_DIR}/Luke_Reading_S30/Luke_Reading_S30.results/Corr_subjLuke_Reading_S30_Z+tlrc'[0]' \
-Luke_Reading_S33 ${REST_DIR}/Luke_Reading_S33/Luke_Reading_S33.results/Corr_subjLuke_Reading_S33_Z+tlrc'[0]' \
-Luke_Reading_S36 ${REST_DIR}/Luke_Reading_S36/Luke_Reading_S36.results/Corr_subjLuke_Reading_S36_Z+tlrc'[0]' \
-Luke_Reading_S37 ${REST_DIR}/Luke_Reading_S37/Luke_Reading_S37.results/Corr_subjLuke_Reading_S37_Z+tlrc'[0]' \
-Luke_Reading_S45 ${REST_DIR}/Luke_Reading_S45/Luke_Reading_S45.results/Corr_subjLuke_Reading_S45_Z+tlrc'[0]' \
-Luke_Reading_S47 ${REST_DIR}/Luke_Reading_S47/Luke_Reading_S47.results/Corr_subjLuke_Reading_S47_Z+tlrc'[0]' \
-Luke_Reading_S48 ${REST_DIR}/Luke_Reading_S48/Luke_Reading_S48.results/Corr_subjLuke_Reading_S48_Z+tlrc'[0]' \
-Luke_Reading_S50 ${REST_DIR}/Luke_Reading_S50/Luke_Reading_S50.results/Corr_subjLuke_Reading_S50_Z+tlrc'[0]' \
-Luke_Reading_S51 ${REST_DIR}/Luke_Reading_S51/Luke_Reading_S51.results/Corr_subjLuke_Reading_S51_Z+tlrc'[0]' \
-Luke_Reading_S52 ${REST_DIR}/Luke_Reading_S52/Luke_Reading_S52.results/Corr_subjLuke_Reading_S52_Z+tlrc'[0]' \
-Luke_Reading_S54 ${REST_DIR}/Luke_Reading_S54/Luke_Reading_S54.results/Corr_subjLuke_Reading_S54_Z+tlrc'[0]' \
-Luke_Reading_S55 ${REST_DIR}/Luke_Reading_S55/Luke_Reading_S55.results/Corr_subjLuke_Reading_S55_Z+tlrc'[0]' \
-Luke_Reading_S56 ${REST_DIR}/Luke_Reading_S56/Luke_Reading_S56.results/Corr_subjLuke_Reading_S56_Z+tlrc'[0]'
+Luke_Reading_S1 ${REST_DIR}/Luke_Reading_S1/Luke_Reading_S1.results/Luke_Reading_S1_ZMap+tlrc'[0]' \
+Luke_Reading_S2 ${REST_DIR}/Luke_Reading_S2/Luke_Reading_S2.results/Luke_Reading_S2_ZMap+tlrc'[0]' \
+Luke_Reading_S4 ${REST_DIR}/Luke_Reading_S4/Luke_Reading_S4.results/Luke_Reading_S4_ZMap+tlrc'[0]' \
+Luke_Reading_S5 ${REST_DIR}/Luke_Reading_S5/Luke_Reading_S5.results/Luke_Reading_S5_ZMap+tlrc'[0]' \
+Luke_Reading_S7 ${REST_DIR}/Luke_Reading_S7/Luke_Reading_S7.results/Luke_Reading_S7_ZMap+tlrc'[0]' \
+Luke_Reading_S8 ${REST_DIR}/Luke_Reading_S8/Luke_Reading_S8.results/Luke_Reading_S8_ZMap+tlrc'[0]' \
+Luke_Reading_S9 ${REST_DIR}/Luke_Reading_S9/Luke_Reading_S9.results/Luke_Reading_S9_ZMap+tlrc'[0]' \
+Luke_Reading_S11 ${REST_DIR}/Luke_Reading_S11/Luke_Reading_S11.results/Luke_Reading_S11_ZMap+tlrc'[0]' \
+Luke_Reading_S12 ${REST_DIR}/Luke_Reading_S12/Luke_Reading_S12.results/Luke_Reading_S12_ZMap+tlrc'[0]' \
+Luke_Reading_S14 ${REST_DIR}/Luke_Reading_S14/Luke_Reading_S14.results/Luke_Reading_S14_ZMap+tlrc'[0]' \
+Luke_Reading_S16 ${REST_DIR}/Luke_Reading_S16/Luke_Reading_S16.results/Luke_Reading_S16_ZMap+tlrc'[0]' \
+Luke_Reading_S17 ${REST_DIR}/Luke_Reading_S17/Luke_Reading_S17.results/Luke_Reading_S17_ZMap+tlrc'[0]' \
+Luke_Reading_S18 ${REST_DIR}/Luke_Reading_S18/Luke_Reading_S18.results/Luke_Reading_S18_ZMap+tlrc'[0]' \
+Luke_Reading_S19 ${REST_DIR}/Luke_Reading_S19/Luke_Reading_S19.results/Luke_Reading_S19_ZMap+tlrc'[0]' \
+Luke_Reading_S20 ${REST_DIR}/Luke_Reading_S20/Luke_Reading_S20.results/Luke_Reading_S20_ZMap+tlrc'[0]' \
+Luke_Reading_S22 ${REST_DIR}/Luke_Reading_S22/Luke_Reading_S22.results/Luke_Reading_S22_ZMap+tlrc'[0]' \
+Luke_Reading_S23 ${REST_DIR}/Luke_Reading_S23/Luke_Reading_S23.results/Luke_Reading_S23_ZMap+tlrc'[0]' \
+Luke_Reading_S25 ${REST_DIR}/Luke_Reading_S25/Luke_Reading_S25.results/Luke_Reading_S25_ZMap+tlrc'[0]' \
+Luke_Reading_S26 ${REST_DIR}/Luke_Reading_S26/Luke_Reading_S26.results/Luke_Reading_S26_ZMap+tlrc'[0]' \
+Luke_Reading_S28 ${REST_DIR}/Luke_Reading_S28/Luke_Reading_S28.results/Luke_Reading_S28_ZMap+tlrc'[0]' \
+Luke_Reading_S29 ${REST_DIR}/Luke_Reading_S29/Luke_Reading_S29.results/Luke_Reading_S29_ZMap+tlrc'[0]' \
+Luke_Reading_S30 ${REST_DIR}/Luke_Reading_S30/Luke_Reading_S30.results/Luke_Reading_S30_ZMap+tlrc'[0]' \
+Luke_Reading_S33 ${REST_DIR}/Luke_Reading_S33/Luke_Reading_S33.results/Luke_Reading_S33_ZMap+tlrc'[0]' \
+Luke_Reading_S36 ${REST_DIR}/Luke_Reading_S36/Luke_Reading_S36.results/Luke_Reading_S36_ZMap+tlrc'[0]' \
+Luke_Reading_S37 ${REST_DIR}/Luke_Reading_S37/Luke_Reading_S37.results/Luke_Reading_S37_ZMap+tlrc'[0]' \
+Luke_Reading_S45 ${REST_DIR}/Luke_Reading_S45/Luke_Reading_S45.results/Luke_Reading_S45_ZMap+tlrc'[0]' \
+Luke_Reading_S47 ${REST_DIR}/Luke_Reading_S47/Luke_Reading_S47.results/Luke_Reading_S47_ZMap+tlrc'[0]' \
+Luke_Reading_S48 ${REST_DIR}/Luke_Reading_S48/Luke_Reading_S48.results/Luke_Reading_S48_ZMap+tlrc'[0]' \
+Luke_Reading_S50 ${REST_DIR}/Luke_Reading_S50/Luke_Reading_S50.results/Luke_Reading_S50_ZMap+tlrc'[0]' \
+Luke_Reading_S51 ${REST_DIR}/Luke_Reading_S51/Luke_Reading_S51.results/Luke_Reading_S51_ZMap+tlrc'[0]' \
+Luke_Reading_S52 ${REST_DIR}/Luke_Reading_S52/Luke_Reading_S52.results/Luke_Reading_S52_ZMap+tlrc'[0]' \
+Luke_Reading_S54 ${REST_DIR}/Luke_Reading_S54/Luke_Reading_S54.results/Luke_Reading_S54_ZMap+tlrc'[0]' \
+Luke_Reading_S55 ${REST_DIR}/Luke_Reading_S55/Luke_Reading_S55.results/Luke_Reading_S55_ZMap+tlrc'[0]' \
+Luke_Reading_S56 ${REST_DIR}/Luke_Reading_S56/Luke_Reading_S56.results/Luke_Reading_S56_ZMap+tlrc'[0]'
