@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --mem-per-cpu=4gb   # memory per CPU core
-#SBATCH -J "step4"   # job name
+#SBATCH -J "step5"   # job name
 #SBATCH --mail-user=ben88@byu.edu  # email address
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
@@ -26,12 +26,10 @@ export OMP_NUM_THREADS=$SLURM_CPUS_ON_NODE
 # Hastily written by Benjamin Carter 2019-04-27
 
 # Operations: what does this script do? (aka outline of the steps and a minor explanation of why)
-# 1. Extracts time course information via 3dmaskave
-# 2. Generates correlation maps via 3dfim+
-# 3. Converts maps to Z-maps
+# 1. Performs a t-test on all participants who survived the motion censor.
 # 
 # Requires: what does this script require to run?
-# 1. Much, even your whole soul should you be unworthy or just the error timeseries (errts<stuff>+tlrc) file produced during step 2.
+# 1. Z maps from step 4
 
 ###################
 #---ENVIRONMENT---#
