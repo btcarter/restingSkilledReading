@@ -72,9 +72,9 @@ Luke_Reading_S28 ${REST_DIR}/Luke_Reading_S28/Luke_Reading_S28.results/Corr_subj
 Luke_Reading_S29 ${REST_DIR}/Luke_Reading_S29/Luke_Reading_S29.results/Corr_subjLuke_Reading_S29_Z+tlrc'[0]' \
 Luke_Reading_S30 ${REST_DIR}/Luke_Reading_S30/Luke_Reading_S30.results/Corr_subjLuke_Reading_S30_Z+tlrc'[0]' \
 Luke_Reading_S33 ${REST_DIR}/Luke_Reading_S33/Luke_Reading_S33.results/Corr_subjLuke_Reading_S33_Z+tlrc'[0]' \
-Luke_Reading_S35 ${REST_DIR}/Luke_Reading_S35/Luke_Reading_S36.results/Corr_subjLuke_Reading_S36_Z+tlrc'[0]' \
-Luke_Reading_S36 ${REST_DIR}/Luke_Reading_S36/Luke_Reading_S37.results/Corr_subjLuke_Reading_S37_Z+tlrc'[0]' \
-Luke_Reading_S37 ${REST_DIR}/Luke_Reading_S37/Luke_Reading_S38.results/Corr_subjLuke_Reading_S38_Z+tlrc'[0]' \
+Luke_Reading_S35 ${REST_DIR}/Luke_Reading_S35/Luke_Reading_S35.results/Corr_subjLuke_Reading_S35_Z+tlrc'[0]' \
+Luke_Reading_S36 ${REST_DIR}/Luke_Reading_S36/Luke_Reading_S36.results/Corr_subjLuke_Reading_S36_Z+tlrc'[0]' \
+Luke_Reading_S37 ${REST_DIR}/Luke_Reading_S37/Luke_Reading_S37.results/Corr_subjLuke_Reading_S37_Z+tlrc'[0]' \
 Luke_Reading_S45 ${REST_DIR}/Luke_Reading_S45/Luke_Reading_S45.results/Corr_subjLuke_Reading_S45_Z+tlrc'[0]' \
 Luke_Reading_S47 ${REST_DIR}/Luke_Reading_S47/Luke_Reading_S47.results/Corr_subjLuke_Reading_S47_Z+tlrc'[0]' \
 Luke_Reading_S48 ${REST_DIR}/Luke_Reading_S48/Luke_Reading_S48.results/Corr_subjLuke_Reading_S48_Z+tlrc'[0]' \
