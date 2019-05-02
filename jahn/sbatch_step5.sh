@@ -49,7 +49,7 @@ OUT=VWFA
 ###############
 3dttest++ \
 -Clustsim \
--prefix ${OUT}_resting \
+-prefix ${REST_DIR}/${OUT}_resting \
 -setA ${OUT} \
 Luke_Reading_S1 ${REST_DIR}/Luke_Reading_S1/Luke_Reading_S1.results/Corr_subjLuke_Reading_S1_Z+tlrc'[0]' \
 Luke_Reading_S2 ${REST_DIR}/Luke_Reading_S2/Luke_Reading_S2.results/Corr_subjLuke_Reading_S2_Z+tlrc'[0]' \
