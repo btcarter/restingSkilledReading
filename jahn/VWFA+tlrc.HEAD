@@ -1,8 +1,8 @@
 
 type = string-attribute
 name = HISTORY_NOTE
-count = 222
-'[ben88@n-j1053-01-psy: Wed May  1 18:34:23 2019] {AFNI_18.1.18:macosx_10.7_Intel_64} 3dUndump -prefix VWFA -master /Users/ben88/Desktop/Luke_Reading_S11.results//errts.Luke_Reading_S11.tproject+tlrc. -srad 10 -xyz tmp.txt~
+count = 221
+'[ben88@n-j1053-01-psy: Thu May  2 09:04:53 2019] {AFNI_18.1.18:macosx_10.7_Intel_64} 3dUndump -prefix VWFA -master /Users/ben88/Desktop/Luke_Reading_S11.results//errts.Luke_Reading_S11.tproject+tlrc. -srad 5 -xyz tmp.txt~
 
 type = string-attribute
 name = TYPESTRING
@@ -12,12 +12,12 @@ count = 15
 type = string-attribute
 name = IDCODE_STRING
 count = 27
-'AFN_84F5e6Lf127XeixF-QHN4Q~
+'AFN_Tkt_pb-lyKzmot2d96QQDA~
 
 type = string-attribute
 name = IDCODE_DATE
 count = 25
-'Wed May  1 18:34:23 2019~
+'Thu May  2 09:04:53 2019~
 
 type = integer-attribute
 name = SCENE_DATA
