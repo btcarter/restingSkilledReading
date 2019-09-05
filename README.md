@@ -9,9 +9,9 @@ This repository contains the analysis scripts used to examine resting state data
 
 ## References used while creating this analysis
 
-1. [Kirwan Lab scripts] [1]
-1. [Andrew Jahn's blogpost] [3]
-2. [Neurosynth's automated meta-analyses] [2]
+1. [Kirwan Lab scripts][1]
+1. [Andrew Jahn's blogpost][3]
+2. [Neurosynth's automated meta-analyses][2]
 
 [1]: https://github.com/Kirwanlab/LabScripts
 [2]: http://neurosynth.org/analyses/terms/visual%20word/
