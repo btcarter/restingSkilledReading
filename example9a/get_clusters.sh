@@ -5,7 +5,6 @@
 ###########
 #VARIABLES#
 ###########
-START_DIR=$(pwd)
 WORK_DIR=~/Box/LukeLab/SkilledReadingStudy/results/resting
 OUT_TXT=$WORK_DIR/resting_clusters.txt
 
@@ -16,6 +15,6 @@ OUT_TXT=$WORK_DIR/resting_clusters.txt
 #Find and printout the center of mass for all ROI's
 touch $OUT_TXT
 
-3dclust -1Dformat -orient LPI -1dindex 0 -1tindex 0 -1thresh 3 -dxyz=1 1.75 0 ${WORK_DIR}/*.HEAD > $OUT_TXT
+3dclust -1Dformat -orient LPI -1dindex 0 -1tindex 1 -2thresh -3.291 3.291 -dxyz=1 1.01 38 ${WORK_DIR}/*.HEAD > $OUT_TXT
 
 #End
