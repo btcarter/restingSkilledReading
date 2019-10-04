@@ -5,7 +5,7 @@
 ###########
 #VARIABLES#
 ###########
-WORK_DIR=~/Box/LukeLab/SkilledReadingStudy/results/resting
+WORK_DIR=~/Box/LukeLab/SkilledReadingStudy/results/resting/sfn2019
 INPUT=${WORK_DIR}/trimmed_*.HEAD
 OUT_TXT=${WORK_DIR}/resting_clusters_trimmed.txt
 PREFIX=${WORK_DIR}/clusters
