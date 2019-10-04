@@ -1,6 +1,6 @@
 #!/bin/bash
-#AUTHORSHIP: Benjamin Carter, 2017-09-21
-#PURPOSE: This uses the conjunction maps made by make_conjunction_mask.sh to do a cluster analysis and produce some numbers to describe the conjunction maps for all the numerophiles that might read your paper.
+#AUTHORSHIP: Benjamin Carter, 2019-10-03
+#PURPOSE: This grabs cluster statistics from the group results and puts them into a table.
 
 ###########
 #VARIABLES#
