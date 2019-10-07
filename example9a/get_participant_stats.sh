@@ -1,7 +1,5 @@
 #!/bin/bash
 #
-#
-#
 # Written by Nathan Muncy on 03/29/16, modified by Ben Carter October 4, 2019
 # This script requires an a priori functional mask, created via the following command:
 # 3dclust -1Dformat -nosum -1dindex 4 -1tindex 5 -2thresh -3.291 3.291 -dxyz=1 -savemask OrthoMask_mask 1.01 38 <results file path>
