@@ -5,7 +5,7 @@ date: October 7, 2019
 output: html_document
 ---
 
-```{r}
+```{r echo = FALSE}
 library(dplyr)
 
 # read in data
