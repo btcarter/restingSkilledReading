@@ -13,7 +13,7 @@ STUDY=${HOME}/compute/skilledReading # path to main study directory
 RESULTS=${STUDY}/resting/results # path to study results directory
 SUBJ_DIR=${STUDY}/resting # path to directory containing participant data
 STATS=${RESULTS}/part_cluster_stats # name of output file to hold the stats
-MASK=${STUDY}/clusters+tlrc # path and name of mask file (previously generated).
+MASK=${RESULTS}/roiMask+tlrc # path and name of mask file (previously generated).
 SURVIVORS=${SUBJ_DIR}/survivors.txt # list of participants who survived motion censoring.
 
 touch ${STATS}.txt     # start output file
