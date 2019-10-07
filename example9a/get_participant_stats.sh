@@ -9,7 +9,7 @@
 ### set variables - these are the only things you'll have to change
 
 # Variables
-STUDY=${HOME}/compute/skilledReading # path to main study directory
+STUDY=${HOME}/compute/skilledReadingStudy # path to main study directory
 RESULTS=${STUDY}/resting/results # path to study results directory
 SUBJ_DIR=${STUDY}/resting # path to directory containing participant data
 STATS=${RESULTS}/part_cluster_stats # name of output file to hold the stats
