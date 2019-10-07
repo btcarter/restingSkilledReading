@@ -1,0 +1,27 @@
+---
+title: Group Results table
+author: Benjamin Carter
+date: October 7, 2019
+output: html_document
+---
+
+```{r}
+library(dplyr)
+
+# read in data
+data <- file.path("~","Box","LukeLab","SkilledReadingStudy","results","resting","sfn2019","resting_clusters_trimmed.txt")
+data <- read.table(data)
+
+# fixing column names
+names(data) <- c("Volume","CM LR","CM PA","CM IS","minLR","maxLR","minPA","maxPA","minIS","maxIS","Mean Z-score", "SEM", "Max Z-score", "MNI X", "MNI Y", "MNI Z")
+
+# expanding volume
+data$Volume <- data$Volume*27
+
+# trimming unwanted columns
+keep <- c("Volume", "Mean Z-score", "SEM", "Max Z-score", "MNI X", "MNI Y", "MNI Z")
+data1 <- data[keep]
+
+# render the table
+knitr::kable(data1)
+```
