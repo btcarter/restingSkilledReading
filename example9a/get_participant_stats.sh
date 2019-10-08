@@ -16,10 +16,10 @@ STATS=${RESULTS}/part_cluster_stats.txt # name of output file to hold the stats
 MASK=${RESULTS}/roiMask+tlrc # path and name of mask file (previously generated).
 SURVIVORS=${SUBJ_DIR}/survivors.txt # list of participants who survived motion censoring.
 
-touch ${STATS}.txt     # start output file
+touch ${STATS}     # start output file
 
 for i in $(cat ${SURVIVORS}); do
-    stat=`3dROIstats -nzmean -nzminmax -nzsigma -mask ${MASK} ${SUBJ_DIR}/${i}/${i}.results/Luke_Reading_S4_ZMap+tlrc'[0]'`
+    stat=`3dROIstats -nzmean -nzminmax -nzsigma -mask ${MASK} ${SUBJ_DIR}/${i}/${i}.results/${i}_ZMap+tlrc'[0]'`
     echo "${i} ${stat}" >> ${STATS}        # keep things straight
 
 done
