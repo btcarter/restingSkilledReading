@@ -19,7 +19,7 @@ SURVIVORS=${SUBJ_DIR}/survivors.txt # list of participants who survived motion c
 touch ${STATS}.txt     # start output file
 
 for i in $(cat ${SURVIVORS}); do
-    stat=`3dROIstats -nzmean -nzminmax -nzsigma -mask ${MASK} ${SUBJ_DIR}/${i}/${i}.results/Luke_Reading_S4_ZMap+tlrc[0]`
+    stat=`3dROIstats -nzmean -nzminmax -nzsigma -mask ${MASK} ${SUBJ_DIR}/${i}/${i}.results/Luke_Reading_S4_ZMap+tlrc'[0]'`
     echo "${i} ${stat}" >> ${STATS}        # keep things straight
 
 done
