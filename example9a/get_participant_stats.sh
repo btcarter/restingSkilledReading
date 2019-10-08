@@ -21,5 +21,4 @@ touch ${STATS}     # start output file
 for i in $(cat ${SURVIVORS}); do
     stat=`3dROIstats -nzmean -nzminmax -nzsigma -mask ${MASK} ${SUBJ_DIR}/${i}/${i}.results/${i}_ZMap+tlrc'[0]'`
     echo "${i} ${stat}" >> ${STATS}        # keep things straight
-
 done
