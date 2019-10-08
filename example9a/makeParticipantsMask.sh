@@ -11,5 +11,5 @@ COORDS=${WORK_DIR}/resting_clusters_trimmed.txt # coordinates for Max Instensiti
 
 
 # make the mask
-1dcat ${COORDS}[13,14,15] > tmp.1D
-3dUndump -prefix ${PREFIX} -master ${MASTER} -srad ${RADIUS} -xyz ${WORK_DIR}/tmp.1D
+1dcat ${COORDS}[13,14,15] > ${WORK_DIR}/tmp.1D # output the voxel coords into a temp file (this was then manually edited to have a fourth column for the dval)
+3dUndump -prefix ${PREFIX} -master ${MASTER} -srad ${RADIUS} -xyz ${WORK_DIR}/tmp.1D # make a mask
