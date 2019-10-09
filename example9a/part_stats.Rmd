@@ -1,0 +1,57 @@
+---
+title: Calculating individual RSFC statistics for SfN
+author: Benjamin T. Carter
+date: October 8, 2019
+---
+
+
+# Read and preprocess data
+
+Here is what I did to preprocess the data and combine it with the summary stats.
+
+```{r}
+STDIR <- paste("/Users","benjamintcarter","Box","LukeLab","SkilledReadingStudy",sep="/") # study directory
+DEMO <- paste(STDIR,"data","demographics","particpantDemographicsWithETStats.csv",sep="/") # dataframe produced during the summary statistics analysis
+DEMO <- file.choose()
+# ROIS <- file.path(STDIR,"results","resting","sfn2019","part_cluster_stats.txt") # the output of the 3dROIstats script
+ROISpath <- file.choose()
+
+# read in data
+DEMO <- read.csv2(DEMO,header = TRUE, sep = ",")
+ROIS <- read.table(ROISpath, header = TRUE, sep = "\t")
+
+# cleaning
+remove <- grep("Luke_Reading_S\\d+ File",ROIS$Luke_Reading_S1.File) # remove extra header rows
+ROIS <- ROIS[-remove,]
+names(ROIS)[names(ROIS) == "Luke_Reading_S1.File"] <- "recording_session_label" # rename it something intuitive
+ROIS$recording_session_label <- sub("\\/fslhome\\/ben88\\/compute\\/skilledReadingStudy\\/resting\\/(Luke_Reading_S\\d+)\\/Luke_Reading_S\\d+\\.results\\/Luke_Reading_S\\d+_ZMap\\+tlrc\\[0\\]","\\1",ROIS$recording_session_label) # edit participant variable
+
+# combine with the demographics dataset
+DF <- merge(ROIS,DEMO,by = "recording_session_label", all.x = TRUE)
+
+# make columns numerics
+for (col in c(3:37,70:80)) {
+ DF[,col] <- as.numeric(as.character(DF[,col]))
+}
+```
+
+Now that I have DF I can make some plots of interesting trends
+
+```{r}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+
+#bend the data to my will
+variables <- c("recording_session_label", paste("Mean_",c(1:7),sep=""),"CURRENT_FIX_DURATION_mu","totalFixations")
+df <- DF[variables]
+variables <- c("recording_session_label","CURRENT_FIX_DURATION_mu","totalFixations")
+df %>% gather(key = "ROI", value = "Mean_Zscore", -recording_session_label,-CURRENT_FIX_DURATION_mu,-totalFixations) %>%
+  ggplot(aes(CURRENT_FIX_DURATION_mu,Mean_Zscore)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    facet_wrap("ROI") +
+    labs(x = "Mean Fixation Duration", y = "Mean RSFC Z-score")
+
+ggsave()
+```
