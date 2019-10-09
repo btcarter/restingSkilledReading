@@ -13,14 +13,16 @@ data <- file.path("~","Box","LukeLab","SkilledReadingStudy","results","resting",
 data <- read.table(data)
 
 # fixing column names
-names(data) <- c("Volume","CM LR","CM PA","CM IS","minLR","maxLR","minPA","maxPA","minIS","maxIS","Mean Z-score", "SEM", "Max Z-score", "MNI X", "MNI Y", "MNI Z")
+names(data) <- c("Volume (µL)","CM LR","CM PA","CM IS","minLR","maxLR","minPA","maxPA","minIS","maxIS","Mean Z-score", "SEM", "Max Z-score", "MNI X", "MNI Y", "MNI Z")
 
 # expanding volume
 data$Volume <- data$Volume*27
 
 # trimming unwanted columns
-keep <- c("Volume", "Mean Z-score", "SEM", "Max Z-score", "MNI X", "MNI Y", "MNI Z")
+keep <- c("Volume (µL)", "Mean Z-score", "SEM", "Max Z-score", "MNI X", "MNI Y", "MNI Z")
 data1 <- data[keep]
+data1$Location <- c("lITS","lIFG","rIPL","rIC","LrOFG","rIFG","MrOFG")
+data1 <- data1[,c(8,1:7)]
 
 # render the table
 knitr::kable(data1)
