@@ -10,15 +10,17 @@ date: October 8, 2019
 Here is what I did to preprocess the data and combine it with the summary stats.
 
 ```{r}
-STDIR <- paste("/Users","benjamintcarter","Box","LukeLab","SkilledReadingStudy",sep="/") # study directory
-DEMO <- paste(STDIR,"data","demographics","particpantDemographicsWithETStats.csv",sep="/") # dataframe produced during the summary statistics analysis
-DEMO <- file.choose()
-# ROIS <- file.path(STDIR,"results","resting","sfn2019","part_cluster_stats.txt") # the output of the 3dROIstats script
-ROISpath <- file.choose()
+STDIR <- "~/Box/LukeLab/SkilledReadingStudy" # study directory
+DEMO <- "~/Box/LukeLab/SkilledReadingStudy/data/demographics/particpantDemographicsWithETStats.csv" # dataframe produced during the summary statistics analysis
+# DEMO <- file.choose()
+ROIS <- "~/Box/LukeLab/SkilledReadingStudy/results/resting/sfn2019/part_cluster_stats.txt" # the output of the 3dROIstats script
+# ROIS <- file.choose()
+LOC <- "~/Box/LukeLab/SkilledReadingStudy/results/resting/sfn2019/whereAmI.txt"
 
 # read in data
 DEMO <- read.csv2(DEMO,header = TRUE, sep = ",")
-ROIS <- read.table(ROISpath, header = TRUE, sep = "\t")
+ROIS <- read.table(ROIS, header = TRUE, sep = "\t")
+LOC <- read.csv2(LOC,header = TRUE, sep=",")
 
 # cleaning
 remove <- grep("Luke_Reading_S\\d+ File",ROIS$Luke_Reading_S1.File) # remove extra header rows
@@ -42,16 +44,24 @@ library(ggplot2)
 library(tidyr)
 library(dplyr)
 
-#bend the data to my will
+#bend the data to my will by gathering them into 1 and renaming them after anatomical names rather than arbitrary numbers
 variables <- c("recording_session_label", paste("Mean_",c(1:7),sep=""),"CURRENT_FIX_DURATION_mu","totalFixations")
 df <- DF[variables]
-variables <- c("recording_session_label","CURRENT_FIX_DURATION_mu","totalFixations")
+
+# rename the mean columns to anatomical designations
+for (col in grep("Mean_\\d",names(df))) {
+  num <- as.numeric(gsub("Mean_(\\d)","\\1",names(df)[col]))
+  names(df)[col] <- as.character(LOC$region[LOC$number == num])
+}
+
+# make a faceted plot
 df %>% gather(key = "ROI", value = "Mean_Zscore", -recording_session_label,-CURRENT_FIX_DURATION_mu,-totalFixations) %>%
   ggplot(aes(CURRENT_FIX_DURATION_mu,Mean_Zscore)) +
     geom_point() +
-    geom_smooth(method = "lm") +
+    geom_smooth(method = "lm", se = FALSE) +
     facet_wrap("ROI") +
-    labs(x = "Mean Fixation Duration", y = "Mean RSFC Z-score")
+    labs(title = "Resting Connectivity Across Participants",x = "Mean Fixation Duration in milliseconds", y = "Mean Z-score") +
+    theme(panel.spacing.x = unit(2,"cm"))
 
-ggsave()
+ggsave("~/Box/LukeLab/SkilledReadingStudy/results/resting/sfn2019/figures/fixationTrends.png", dpi = 600)
 ```
