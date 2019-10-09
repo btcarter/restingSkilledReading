@@ -6,7 +6,7 @@
 WORK_DIR=${HOME}/Box/LukeLab/SkilledReadingStudy/results/resting/sfn2019
 PREFIX=${WORK_DIR}/roiMask # name for output
 MASTER=${WORK_DIR}/trimmed_VWFA_resting+tlrc # reference dataset
-RADIUS=10 # sphere radius
+RADIUS=7 # sphere radius
 COORDS=${WORK_DIR}/resting_clusters_trimmed.txt # coordinates for Max Instensities
 
 
