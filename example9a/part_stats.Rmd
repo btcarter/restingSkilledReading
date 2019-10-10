@@ -43,6 +43,7 @@ Now that I have DF I can make some plots of interesting trends
 library(ggplot2)
 library(tidyr)
 library(dplyr)
+library(psych)
 
 #bend the data to my will by gathering them into 1 and renaming them after anatomical names rather than arbitrary numbers
 variables <- c("recording_session_label", paste("Mean_",c(1:7),sep=""),"CURRENT_FIX_DURATION_mu","totalFixations")
@@ -64,4 +65,12 @@ df %>% gather(key = "ROI", value = "Mean_Zscore", -recording_session_label,-CURR
     theme(panel.spacing.x = unit(2,"cm"))
 
 ggsave("~/Box/LukeLab/SkilledReadingStudy/results/resting/sfn2019/figures/fixationTrends.png", dpi = 600)
+```
+
+Now for computing some correlation coefficients
+
+```{r echo = FALSE}
+
+cor.test(df$MrOFG,df$CURRENT_FIX_DURATION_mu)
+
 ```
